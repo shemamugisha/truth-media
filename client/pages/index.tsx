@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Sidebar, Feed } from "../components";
+import { Sidebar, Feed, Widget } from "../components";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <div className={style.content}>
         <Sidebar />
         <Feed />
-        <h2>Widgets</h2>
+        <Widget />
       </div>
     </div>
   );

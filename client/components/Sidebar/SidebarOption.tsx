@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { IconType } from "react-icons";
+import { useRouter } from "next/router";
 
 interface TSidebar {
   text: string;
@@ -23,8 +24,17 @@ const SidebarOption: FC<TSidebar> = ({
   redirect,
   setSelected,
 }) => {
+  const router = useRouter();
   return (
-    <div className={style.wrapper} onClick={() => setSelected!(text)}>
+    <div
+      className={style.wrapper}
+      onClick={() => {
+        setSelected!(text);
+        if (redirect) {
+          router.push(redirect);
+        }
+      }}
+    >
       <div className={style.iconContainer}>
         <Icon />
       </div>
